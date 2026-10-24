@@ -48,7 +48,7 @@ export default async function handler(request, response) {
       WHERE created_at > NOW() - INTERVAL '24 hours'
       ORDER BY created_at DESC
     `;
-    return response.status(200).json({ locations: result.rows });
+    return response.status(200).json({ locations: result });
   } catch (error) {
     console.error("Unable to read locations.", error);
     return response.status(500).json({ error: "Unable to read locations." });
