@@ -1,5 +1,17 @@
 import { timingSafeEqual } from "node:crypto";
-import { sql } from "@vercel/postgres";
+import { neon } from "@neondatabase/serverless";
+
+const sql = neon(process.env.POSTGRES_URL);
+
+const schema = `
+  CREATE TABLE IF NOT EXISTS locations (
+    id BIGSERIAL PRIMARY KEY,
+    latitude DOUBLE PRECISION NOT NULL CHECK (latitude BETWEEN -90 AND 90),
+    longitude DOUBLE PRECISION NOT NULL CHECK (longitude BETWEEN -180 AND 180),
+    accuracy DOUBLE PRECISION NOT NULL CHECK (accuracy >= 0),
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+  )
+`;
 
 function hasValidSecret(request) {
   const configuredSecret = process.env.ADMIN_SECRET;
@@ -29,6 +41,7 @@ export default async function handler(request, response) {
   }
 
   try {
+    await sql(schema);
     const result = await sql`
       SELECT id, latitude, longitude, accuracy, created_at
       FROM locations
