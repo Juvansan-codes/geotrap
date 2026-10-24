@@ -41,7 +41,7 @@ export default async function handler(request, response) {
   }
 
   try {
-    await sql(schema);
+    await sql.query(schema);
     const result = await sql`
       SELECT id, latitude, longitude, accuracy, created_at
       FROM locations
