@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GeoTrap</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app" aria-live="polite">
+      <button id="continue-button" class="button" type="button">Continue</button>
+
+      <section id="status-panel" class="status-panel" hidden>
+        <p id="status-message"></p>
+        <div id="location-details" hidden>
+          <p>Latitude: <span id="latitude"></span></p>
+          <p>Longitude: <span id="longitude"></span></p>
+          <p>Accuracy: <span id="accuracy"></span></p>
+        </div>
+        <div class="actions">
+          <button id="retry-button" class="button" type="button" hidden>Retry</button>
+          <button id="return-button" class="button button-secondary" type="button">Return</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

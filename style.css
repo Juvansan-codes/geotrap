@@ -1,0 +1,111 @@
+:root {
+  font-family: Arial, sans-serif;
+  color: #111;
+  background: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.status-panel {
+  width: min(100%, 24rem);
+  text-align: center;
+}
+
+.status-panel p {
+  margin: 0.5rem 0;
+}
+
+.button {
+  min-width: 7rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #111;
+  border-radius: 0.25rem;
+  color: #fff;
+  background: #111;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: #333;
+}
+
+.button:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 3px;
+}
+
+.button-secondary {
+  color: #111;
+  background: #fff;
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+  color: #fff;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.admin-panel {
+  max-width: 48rem;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.admin-panel h1 {
+  font-size: 1.5rem;
+}
+
+.admin-panel form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.75rem;
+}
+
+.admin-panel label {
+  display: flex;
+  flex: 1 1 16rem;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.admin-panel input {
+  padding: 0.7rem;
+  border: 1px solid #111;
+  border-radius: 0.25rem;
+  font: inherit;
+}
+
+.location-list {
+  margin-top: 1.5rem;
+}
